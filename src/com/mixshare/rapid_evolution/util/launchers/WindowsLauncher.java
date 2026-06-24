@@ -15,9 +15,9 @@ public class WindowsLauncher {
 	
 	static public void main(String args[]) {
         try {
-        	String bestJavaPath = getJavaPath("C:\\Program Files (x86)\\Java");
+        	String bestJavaPath = getJavaPath("C:\\Program Files\\Java");
         	if (bestJavaPath == null)
-        		bestJavaPath = getJavaPath("C:\\Program Files\\Java");
+        		bestJavaPath = getJavaPath("C:\\Program Files (x86)\\Java");
         	       
         	boolean launch64Bit = false;
         	if (!isJava64bit(bestJavaPath)) {
@@ -163,7 +163,7 @@ public class WindowsLauncher {
 	        				javaVersion = outputGobbler2.getJavaVersion();
 	    				}
 	    				System.out.println("\tJava Version=" + javaVersion);
-	    				if (javaVersion.startsWith("1.6") || javaVersion.startsWith("1.5") || javaVersion.startsWith("1.7")) {
+	    				if (javaVersion.startsWith("1.8") || javaVersion.startsWith("1.7") || javaVersion.startsWith("1.6") || javaVersion.startsWith("1.5")) {
 	    					if ((bestJavaPath == null) || (bestJavaVersion.compareTo(javaVersion) < 0)) {
 	    						bestJavaPath = javaPath;
 	    						bestJavaVersion = javaVersion;
